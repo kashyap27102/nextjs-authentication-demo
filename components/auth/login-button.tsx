@@ -18,6 +18,7 @@ export const LogginButton = ({
   }
 
   const onClickHandler = () => {
+    console.log('click')
     router.push("/auth/login");
   };
 
