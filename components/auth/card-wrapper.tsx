@@ -11,7 +11,7 @@ import { Social } from "./social";
 import { BackButton } from "./back-button";
 
 interface CardWrapperProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   headerLabel: string;
   backButtonLabel: string;
   backButtonHref: string;
