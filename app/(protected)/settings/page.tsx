@@ -8,8 +8,8 @@ const page = async () => {
     <div>
       {JSON.stringify(session)}
 
-      <form
-        action={async () => {
+        <form
+          action={async () => {
           "use server"
           await signOut();
         }}
