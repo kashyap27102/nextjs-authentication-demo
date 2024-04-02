@@ -26,6 +26,20 @@ export const {
   },
 
   callbacks: {
+    async signIn({ user, account }) {
+      // if user login using OAuth provider, no need to be emailVerification
+      if (account?.provider !== "credentials") return true;
+
+      const existedUser = await getUserById(user.id!);
+
+      // Prevent sign in without email verification
+      if (!existedUser?.emailVerified) return false;
+
+      // TODO: Add 2FA check
+
+      return true;
+    },
+
     async session({ token, session }) {
       if (token.sub && session.user) {
         session.user.id = token.sub;
@@ -46,7 +60,7 @@ export const {
       if (!existingUser) return token;
 
       token.role = existingUser.role;
-      console.log(token);
+
       return token;
     },
   },
