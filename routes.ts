@@ -3,14 +3,20 @@
  * @type {string[]}
  */
 
-export const publicRoutes: string[] = ["/","/auth/new-verification"];
+export const publicRoutes: string[] = ["/", "/auth/new-verification"];
 
 /**
  * this routes are for authentication purpose
  * @type {string[]}
  */
 
-export const authRoutes: string[] = ["/auth/login", "/auth/register","/auth/error"];
+export const authRoutes: string[] = [
+  "/auth/login",
+  "/auth/register",
+  "/auth/error",
+  "/auth/reset-password",
+  "/auth/forgot-password",
+];
 
 /**
  * The prefix for authentication routes that is used for API authentication purpose

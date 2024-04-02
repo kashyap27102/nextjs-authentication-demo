@@ -23,12 +23,14 @@ const NewVerificationForm = () => {
         setSuccess(data.success);
         setError(data.error);
       } catch (error) {
+        console.log(error);
         setError("Something went Wrong!");
       }
     });
   }, [token]);
 
   useEffect(() => {
+    console.log('asdasd')
     onSubmit();
   }, [token]);
 

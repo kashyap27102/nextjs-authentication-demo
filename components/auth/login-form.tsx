@@ -21,6 +21,7 @@ import { FormSuccess } from "../form-success";
 import { login } from "@/actions/login";
 import { Suspense, useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export const LoginForm = () => {
   const searchParams = useSearchParams();
@@ -94,6 +95,9 @@ export const LoginForm = () => {
                   </FormItem>
                 )}
               />
+              <Button variant='link' size='sm' className="px-0">
+                <Link href={"/auth/forgot-password"}>Forgot Password?</Link>
+              </Button>
             </div>
             <FormError message={error || urlError} />
             <FormSuccess message={success} />
